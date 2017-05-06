@@ -1,0 +1,10 @@
+######################################################################
+# start and stop the vpn from the command line with these two commands
+######################################################################
+startvpn() {
+  launchctl load -w /Library/LaunchAgents/net.pulsesecure.pulsetray.plist
+}
+quitvpn() {
+  launchctl unload -w /Library/LaunchAgents/net.pulsesecure.pulsetray.plist
+  osascript -e 'tell application "Pulse Secure" to quit'
+}
